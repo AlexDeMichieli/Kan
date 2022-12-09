@@ -46,7 +46,7 @@ def find_reservation():
 
 def send_mail():
     email = os.environ['email']
-    email_password = os.environ['password']
+    email_password = os.environ['email_password']
 
     sent_from = email
     to = [email, email]
