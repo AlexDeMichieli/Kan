@@ -1,0 +1,17 @@
+name: My Workflow
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      api_key: ${{secrets.API_KEY}}
+      venue_id: ${{secrets.VENUE_ID}}
+      email: ${{secrets.EMAIL}}
+      email_password: ${{secrets.PASSWORD}}
+
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run my Python script
+        run: python app.py
