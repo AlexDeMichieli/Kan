@@ -1,17 +1,19 @@
 import smtplib
 import requests
-from keys import vars
+import os
+# from keys import vars
 
 from calendar import monthrange
 from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
-#comment
+
+
 available_dates = []
-myvars = vars()
+
 
 def make_request(year,month,day):
-    api_key = myvars['api_key']
-    venue_id = myvars['venue_id']
+    api_key = os.environ['API_KEY']
+    venue_id = os.environ['VENUE_ID']
     
     url = f"https://api.resy.com/4/find?lat=45.5152&long=-122.6784&day={year}-{month}-{day}&party_size=2&venue_id={venue_id}"
 
@@ -43,8 +45,8 @@ def find_reservation():
         counter +=1
 
 def send_mail():
-    email = myvars['email']
-    email_password = myvars['password']
+    email = os.environ['EMAIL']
+    email_password = os.environ['PASSWORD']
 
     sent_from = email
     to = [email, email]
