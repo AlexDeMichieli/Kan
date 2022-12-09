@@ -8,7 +8,7 @@ from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 
 
-available_dates = []
+available_dates = ['h']
 
 
 def make_request(year,month,day):
