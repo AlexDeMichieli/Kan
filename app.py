@@ -12,8 +12,8 @@ available_dates = []
 
 
 def make_request(year,month,day):
-    api_key = os.environ['API_KEY']
-    venue_id = os.environ['VENUE_ID']
+    api_key = os.environ['api_key']
+    venue_id = os.environ['venue_id']
     
     url = f"https://api.resy.com/4/find?lat=45.5152&long=-122.6784&day={year}-{month}-{day}&party_size=2&venue_id={venue_id}"
 
@@ -45,8 +45,8 @@ def find_reservation():
         counter +=1
 
 def send_mail():
-    email = os.environ['EMAIL']
-    email_password = os.environ['PASSWORD']
+    email = os.environ['email']
+    email_password = os.environ['password']
 
     sent_from = email
     to = [email, email]
